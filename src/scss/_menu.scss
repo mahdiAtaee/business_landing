@@ -1,0 +1,126 @@
+#menu {
+    .nav_bar {
+        @include flex(flex, center, space-between);
+        line-height: 40px;
+        @include position(relative);
+        z-index: 10;
+
+        .hambergur-menu {
+            overflow: hidden;
+            @include size(40px, 40px);
+            @include position(relative);
+            z-index: 99;
+            @include flex(flex, center, center);
+            display: none;
+            transition: 0.5s ease;
+            cursor: pointer;
+
+            .hambergur {
+                @include size(26px, 4px);
+                @include position(absolute);
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: rgba($color: #000000, $alpha: 0.5);
+                transition: 0.5s ease-in;
+
+                &::after {
+                    content: '';
+                    @include size(16px, 4px);
+                    @include position(absolute, -8px, null, null, 5px);
+                    background: #fff;
+                    border-radius: 5px;
+                    box-shadow: rgba($color: #000000, $alpha: 0.5);
+                    transition: 0.5s ease-in;
+                }
+
+                &::before {
+                    content: '';
+                    @include size(16px, 4px);
+                    @include position(absolute, null, null, -8px, 5px);
+                    background: #fff;
+                    border-radius: 5px;
+                    box-shadow: rgba($color: #000000, $alpha: 0.5);
+                    transition: 0.5s ease-in;
+                }
+            }
+        }
+
+        .logo {
+            @include position(relative);
+            @include flex(flex, center, center);
+            @include size(40px, null);
+            color: #000 !important;
+            z-index: 2;
+
+            &::after {
+                content: '';
+                @include size(40px, 40px);
+                @include position(absolute, 0, 0, 0, 0, 1);
+                background-color: #fff;
+                border-radius: 50%;
+            }
+
+            a {
+                @include position(relative);
+                line-height: 44px;
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: $purple-color !important;
+                z-index: 4;
+            }
+        }
+
+        nav {
+            flex-basis: 50%;
+
+            ul {
+                @include flex(flex, center, space-between);
+                @include space(0, null, null, null);
+                @include size(null, 60px);
+
+
+                li {
+                    @include position(relative);
+
+                    &::after {
+                        content: '';
+                        @include size(0, 3px);
+                        background-color: #fff;
+                        @include position(absolute, null, 0, 0, 0);
+                        transition: 0.5s ease;
+                    }
+
+                    &:hover::after {
+                        @include size(100%, 3px);
+                    }
+                   
+                }
+            }
+        }
+    }
+
+    .nav_bar.open .hambergur {
+        transform: translateX(-40px);
+        box-shadow: none;
+
+        &::after {
+            box-shadow: rgba($color: #000000, $alpha: 0.5);
+            transform: rotate(45deg) translate(30px, -24px);
+            @include position(absolute, -4px, null, null, null);
+        }
+
+        &::before {
+            box-shadow: rgba($color: #000000, $alpha: 0.5);
+            transform: rotate(-45deg) translate(30px, 24px);
+            @include position(absolute, 4px, null, null, null);
+
+        }
+    }
+
+    .nav_bar.open nav {
+        @include size(50%, 100%);
+        @include position(fixed, 0, 0, 0, null);
+        background: $dark-purple-color;
+        transition: 0.5s ease-in;
+    }
+}

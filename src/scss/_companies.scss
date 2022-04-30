@@ -1,0 +1,27 @@
+#company {
+    margin-bottom: 2rem;
+    .title {
+        @include size(100%, null);
+        @include space(0, 0, 3rem, 0);
+
+        p,
+        h3 {
+            text-align: center;
+        }
+
+    }
+
+    .owl-nav {
+        @include flex(flex, center, space-between);
+        @include space(-3rem, 0, 0, -4rem);
+        @include size(115%, null);
+
+        button {
+            @include size(30px, 30px);
+            @include flex(flex, center, center);
+            border-radius: 50%;
+            background-color: #C4A3FD;
+            outline: none;
+        }
+    }
+}

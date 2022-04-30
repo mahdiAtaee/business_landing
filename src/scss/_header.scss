@@ -1,0 +1,75 @@
+#header {
+    margin-top: 10%;
+    min-height: 700px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    .background-header {
+
+        &::after {
+            content: '';
+            @include position(absolute, -30%, null, null, -20%, 0);
+            @include size(800px, 800px);
+            border-radius: 50%;
+            background: linear-gradient(to top, #C19EFF, transparent);
+        }
+
+        &::before {
+            content: '';
+            @include position(absolute, -57%, null, null, -23%, 0);
+            @include size(1000px, 1000px);
+            border-radius: 50%;
+            background: linear-gradient(to top, #C19EFF, transparent);
+        }
+
+
+        .right-section {
+            @include position(relative);
+
+            p,h1 {
+                font-size: $font-size + 0.5;
+                @include position(relative);
+                z-index: 5;
+            }
+
+            h1{
+                font-size: $font-size + 1;
+            }
+
+            &::after {
+                content: '';
+                @include position(absolute, 0, 10%, null, null, 0);
+                @include size(80px, 70px);
+                background: url(../images/loop.png);
+                background-size: cover;
+            }
+
+            &::before {
+                content: '';
+                @include position(absolute, 80%, null, null, 30%, 1);
+                @include size(70px, 70px);
+                background: url(../images/shape.png);
+                background-size: cover;
+            }
+
+            .call-to-action {
+                @include flex(flex, center, null);
+
+                .play-icon {
+                    @include size(40px, 40px);
+                    @include space(0.5rem, null, null, null, true);
+                    @include space(0.5rem, null, null, null);
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    background: rgba(0, 0, 0, 0.2);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .title-bg {
+            @include position(absolute, null, null, null, null, 2);
+        }
+    }
+}

@@ -1,0 +1,77 @@
+#footer {
+    margin-top: 5rem !important;
+    @include position(relative);
+
+    &::after {
+        content: '';
+        @include position(absolute, -150px, null, null, 0, 0);
+        @include size(163px, 200px);
+        background: url(../images/Cones.png);
+        background-size: cover;
+    }
+
+    .feed-wrapper {
+        @include flex();
+        flex-direction: column;
+
+        .icon {
+            @include size(100%, null);
+            @include flex();
+            @include space(0, 0, 2rem, 0);
+
+            img {
+                @include size(120px, 120px);
+            }
+        }
+
+        h3,
+        p {
+            text-align: center;
+        }
+
+        .email-wrapper {
+            @include position(relative);
+            @include size(400px, 50px);
+
+            input[type=email] {
+                @include size(100%, 100%);
+                border-radius: 25px;
+                border: none;
+                background-color: #C4A3FD;
+                border: 1px solid #fff;
+                padding: 0.5rem;
+            }
+
+            input[type=button] {
+                @include position(absolute, 50%, null, null, 57px);
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .footer {
+        border-bottom: 1px solid #fff;
+        @include space(0, 0, 2rem, 0, true);
+
+        .title {
+            font-size: $font-size + 0.3;
+            @include space(1rem, 0, null, null);
+
+        }
+
+        .links {
+            @include flex(flex, center, space-between);
+        }
+    }
+
+    .copyRight {
+        @include space(1rem, 0, null, null, true);
+        @include flex(flex, center, space-between);
+
+        .social-icon {
+            a {
+                font-size: $font-size + 0.3;
+            }
+        }
+    }
+}

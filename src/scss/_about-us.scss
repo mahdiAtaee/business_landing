@@ -1,0 +1,11 @@
+#about-us {
+    margin-top: 6rem;
+    .right-side {
+        .title {
+            @include position(relative);
+            p{
+                font-size: $font-size + 0.3;
+            }
+        }
+    }
+}

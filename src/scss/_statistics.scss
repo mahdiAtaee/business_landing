@@ -1,0 +1,50 @@
+#statistics {
+    margin-top: 7rem !important;
+
+    .title {
+        @include size(100%, null);
+
+        @include space(0, 0, 2rem, 0);
+
+        p,
+        h3 {
+            text-align: center;
+        }
+    }
+
+    .statistics-wrapper {
+        @include size(100%, 100px);
+        border-radius: 50px;
+        background: $dark-purple-color;
+        @include flex(flex, center, space-around);
+
+        div {
+            text-align: center;
+            @include position(relative);
+            flex-basis: 30%;
+            max-width: 30%;
+            font-size: $font-size + 0.3;
+
+            &:nth-child(2)::after {
+                content: '';
+                @include size(2px, 80%);
+                @include position(absolute, 15%, null, null, 100%);
+                background-color: $white-color;
+                border-radius: 5px;
+            }
+
+            &:nth-child(2)::before {
+                content: '';
+                @include size(2px, 80%);
+                @include position(absolute, 15%, 100%, null, null);
+                background-color: $white-color;
+                border-radius: 5px;
+            }
+
+            span {
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+}

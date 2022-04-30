@@ -1,0 +1,57 @@
+#services {
+    margin-top: 7rem !important;
+    background: $dark-purple-color;
+
+    .title {
+        @include size(100%, null);
+        @include space(3rem, 0, 3rem, 0);
+
+        p,
+        h3 {
+            text-align: center;
+        }
+    }
+
+    .item {
+        @include flex(flex, center, space-between);
+        @include space(2rem, 0, 0, 0);
+        @include space(2rem, null, null, null, true);
+        @include size(null, 200px);
+        @include position(relative);
+        border-radius: 15px;
+        background: $purple-color;
+
+        .pragraph {
+            flex-basis: 80%;
+            max-width: 80%;
+
+            h4 {
+                font-size: $font-size + 0.3;
+            }
+
+            p {
+                font-size: $font-size;
+                @include space(0, 0, 0, .5rem, true);
+            }
+        }
+
+        .icon {
+            flex-basis: 20%;
+            max-width: 20%;
+
+            img {
+                @include size(60px, null);
+            }
+
+        }
+
+        .plus {
+            @include position(absolute, null, 0, 0, null);
+            @include size(40px, 40px);
+            @include flex(flex, center, center);
+            background-color: $dark-purple-color;
+            border-top-left-radius: 6px;
+            cursor: pointer;
+        }
+    }
+}

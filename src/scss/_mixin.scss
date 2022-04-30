@@ -1,0 +1,31 @@
+//mixin
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin space($top, $right, $bottom, $left, $padding:false) {
+    @if $padding {
+        padding: $top $right $bottom $left;
+    }
+
+    @else {
+        margin: $top $right $bottom $left;
+    }
+}
+
+@mixin flex($display:flex, $align-items:center, $justify-content:center) {
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin position ($position:absolute, $top:null, $right:null, $bottom:null, $left:null, $z-index:1) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
